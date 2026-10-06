@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn } from "storybook/test";
 import { Avatar } from "./Avatar";
 
-
 const meta = {
   title: "Components/Avatar",
   component: Avatar,
@@ -30,6 +29,19 @@ const meta = {
   args: {
     onStatusChange: fn(),
   },
+  decorators: [
+    (Story) => (
+      <div
+        css={{
+          padding: "20px",
+          border: "8px solid #FF6933",
+          backgroundColor: "#DD4209",
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof Avatar>;
 
 export default meta;
